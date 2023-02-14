@@ -1,2 +1,2 @@
 # webapp_entrelinhas
-site entrelinhas
+ aplicacao web de sistema de recomendacao de filmes
