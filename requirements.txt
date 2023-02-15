@@ -88,7 +88,6 @@ pyftpdlib==1.5.7
 Pygments==2.12.0
 pylance==0.1.5
 pyparsing==3.0.9
-pyreaddbc==1.0.0
 pyrsistent==0.19.1
 pysus==0.6.1
 pytest==7.2.0
