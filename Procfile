@@ -1,1 +1,1 @@
-web: gunicorn site_entrelinhas:entrelinhas
+web: gunicorn meu_site:app
