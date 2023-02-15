@@ -33,7 +33,6 @@ pyarrow==9.0.0
 pycparser==2.21
 pyftpdlib==1.5.7
 Pygments==2.12.0
-pylance==0.1.5
 pyparsing==3.0.9
 pyrsistent==0.19.1
 pytest==7.2.0
