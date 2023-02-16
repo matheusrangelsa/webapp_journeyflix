@@ -1,14 +1,20 @@
 {% extends "base.html" %} 
 {% block conteudo %}
     <h1>Resultados da consulta:</h1>
-    <ul>
+    <div class="container-fluid bg-full p-0">
+      <div class="row col-sm-10 text-center m-auto">
       {% for resultado in resultados %}
-      <li>
-        <div>
-          {{ resultado.Nome }} {{ resultado.Categoria }} {{ resultado.Duracao }}
-          <img src="{{ resultado.Imagem }}">
+      <div class="col-lg-4 item-fa example p-3">
+        <div class="item-container">
+          <div class="wrapper">
+          <div class="item-date">{{resultado.Duracao}} min.</div>
+            <div class="item-category">{{ resultado.Categoria}}</div>
+            <div class="item-title clearfix "><h3 class="text-light pt-3 ">{{ resultado.Nome}}</h3></div>
+            <div class="icon my-4"><img src="{{ resultado.Imagem }}"></div>
+          </div>
         </div>
-      </li>
+    </div>
       {% endfor %}
-    </ul>
+      </div>
+    </div>
 {% endblock %}
