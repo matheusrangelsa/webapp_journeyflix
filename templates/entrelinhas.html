@@ -1,43 +1,18 @@
 <!DOCTYPE html>
+<html lang="en">
 
-<html lang='pt-br'>
-
-<head>
-    <title data-react-helmet="true">Entrelinhas | Com você em todo o trajeto.</title>
-    <meta data-react-helmet="true" charset="UTF-8" />
-    <!-- Responsividade -->
-    <meta data-react-helmet="true" name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="UTF-8" />
+    <title>Entrelinhas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta data-react-helmet="true" name="mobile-web-app-capable" content="yes" />
-    <meta data-react-helmet="true" name="apple-mobile-web-app-capable" content="yes" />
-    <meta data-react-helmet="true" name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta data-react-helmet="true" name="format-detection" content="telephone=no" />
-    <meta data-react-helmet="true" name="application-name" content="Globoplay" />
-    <meta data-react-helmet="true" name="msapplication-TileColor" content="#101010" />   
-    <!-- CSS -->
-    <link rel="stylesheet" crossorigin="anonymous"
-        href='https://s3.glbimg.com/v1/AUTH_c7def7ff66fe4b13beac0810ffbf780f/secure/app-vendor-bundle-dc6d548.css' />
+    <!-- conexao com CSS -->
     <link rel="stylesheet" crossorigin="anonymous"
         href='https://s3.glbimg.com/v1/AUTH_c7def7ff66fe4b13beac0810ffbf780f/secure/app-client-bundle-f64000f.css' />
-    <!-- Fontes -->    
-    <link rel="preload"
-        href="https://s3.glbimg.com/v1/AUTH_2caf29d99e86401197555831070efae8/fonts/opensans-regular/opensans-regular.woff"
-        as="font" crossorigin>
-    <link rel="preload"
-        href="https://s3.glbimg.com/v1/AUTH_2caf29d99e86401197555831070efae8/fonts/opensans-light/opensans-light.woff"
-        as="font" crossorigin>
-    <link rel="preload"
-        href="https://s3.glbimg.com/v1/AUTH_2caf29d99e86401197555831070efae8/fonts/opensans-semibold/opensans-semibold.woff"
-        as="font" crossorigin>
-    <link rel="preload"
-        href="https://s3.glbimg.com/v1/AUTH_2caf29d99e86401197555831070efae8/fonts/opensans-bold/opensans-bold.woff"
-        as="font" crossorigin>
-    <link rel="preload"
-        href="https://s3.glbimg.com/v1/AUTH_2caf29d99e86401197555831070efae8/fonts/opensans-condensed-bold/opensans-condensed-bold.woff"
-        as="font" crossorigin>
-    <link rel="manifest" href="/pwa-manifest.json">
-</head>
-
-<body>
+    <!-- fim da conexão -->
+  </head>
+  <body>
     <div id="app">
         <div>
             <div class="app-layout">
@@ -45,7 +20,7 @@
                     <div class="header__placeholder"></div>
                     <header class="header">
                         <div class="header__menu-icon">
-                          <!-- DEIXANDO AQUI SÓ PQ QUANDO TIRO A LOGO FICA FORA DE MARGEM -->  
+                        <!-- DEIXANDO AQUI SÓ PQ QUANDO TIRO A LOGO FICA FORA DE MARGEM -->  
                         </div>
                         <a class="header__logo"
                             aria-label="Página inicial Globoplay" href="/"><svg aria-hidden="true"
@@ -70,10 +45,25 @@
                             </svg>
                         </a>
                         <nav aria-label="Menu principal" class="header__primary-menu"></nav>
-                        <div aria-label="Menu secundário" class="toolbar__container"></div>  
-
-                        </div>
+                     
                     </header>
+
+                    <!-- CSS -->
+                    <style>
+                        #number-input{
+
+                        }
+                    </style>
+
+                    <div id="number-input">
+                        <form method="post" action="{{ url_for('resultado') }}">
+                            <label for="trajeto" style="color: white;">
+                                <br><br><br><br><br><br>
+                                Digite um valor numérico:
+                            </label>
+                            <input type="number" name="trajeto" id="trajeto" required />
+                            <button type="submit">Enviar</button>
+                        </form>
 
                     <!-- Informaçoões do final da página [inicio] -->
                     <footer class="footer-widget">
@@ -102,7 +92,10 @@
         </div>
     </div>
 
+   
+      
+
+
 
 </body>
-
 </html>
