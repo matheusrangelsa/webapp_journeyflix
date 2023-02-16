@@ -1,19 +1,14 @@
-!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Resultado</title>
-  </head>
-  <body>
-    {% extends "base.html" %} {% block content %}
+{% extends "base.html" %} 
+{% block conteudo %}
     <h1>Resultados da consulta:</h1>
     <ul>
       {% for resultado in resultados %}
-      <li>{{ resultado }}</li>
+      <li>
+        <div>
+          {{ resultado.Nome }} {{ resultado.Categoria }} {{ resultado.Duracao }}
+          <img src="{{ resultado.Imagem }}">
+        </div>
+      </li>
       {% endfor %}
     </ul>
-    {% endblock %}
-  </body>
-</html>
+{% endblock %}
