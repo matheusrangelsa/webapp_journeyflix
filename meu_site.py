@@ -7,11 +7,11 @@ app = Flask(__name__)
 
 @app.route("/")
 def homepage():
-    return render_template("homepage.html")
+    return render_template("Templates/homepage.html")
 
 @app.route("/globoplay/entrelinhas")
 def entrelinhas():
-    return render_template('entrelinhas.html')
+    return render_template('Templates/entrelinhas.html')
 
 # colocar o site no ar
 if __name__ == "__main__":
