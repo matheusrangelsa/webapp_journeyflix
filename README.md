@@ -1,6 +1,8 @@
 # Projeto Journeyflix | Sistema de Recomendação de Conteúdos de Streaming
 Projeto desenvolvido para implementar as **funcionalidades básicas** do sistema de recomendação de um streaming de vídeos, baseado na **filtragem por conteúdo** usando **python**.
 
+![Logomarca Journeyflix](https://github.com/matheusrangelsa/webapp_journeyflix/blob/main/static/capa_journey-flix.png)
+
 ### **O que é o Journeyflix?**
 A proposta da Journeyflix é oferecer um sistema de recomendação de vídeos, tais como os principais players de streaming Video On Demand (Netflix, Max, Globoplay, Amazon Prime, entre outros), mas focado em quem gosta de aproveitar o tempo de deslocamento diário em transportes públicos para assistir algo
 
