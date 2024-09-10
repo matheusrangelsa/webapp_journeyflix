@@ -1,0 +1,158 @@
+
+{% extends "base.html" %} 
+{% block conteudo %}
+<!-- CSS -->
+<div id="number-input">
+    <form method="post" action="/resultado">
+        <label for="trajeto">
+            <br><br>
+            Informe o tempo do seu trajeto no transporte público em minutos (apenas números):
+        </label>
+        <br><input type="number" style="color: black; border: 2px solid; border-radius: 4px; background-color: #dbdbdb;" name="trajeto" id="trajeto" required />
+        
+        <!-- checkbox -->
+
+        <div class="container_categorias">
+           
+            <div class="Categorias" style="display: none">
+                <div>
+                    <input type="checkbox" name="Categorias" value="Novelas">
+                    <label >Novelas</label>
+                </div>
+    
+                <div>
+                    <input type="checkbox" name="Categorias" value="Series">
+                    <label >Séries</label>
+                </div>
+    
+                <div>
+                    <input type="checkbox" name="Categorias" value="Reality Show">
+                    <label >Reality Show</label>
+                </div>
+
+                <div>
+                  <input type="checkbox" name="Categorias" value="Filmes">
+                  <label >Filmes</label>
+              </div>
+    
+                <div>
+                    <input type="checkbox" name="Categorias" value="Documentarios">
+                    <label >Documentarios</label>
+                </div>
+    
+                <div>
+                    <input type="checkbox" name="Categorias" value="Jornalismo">
+                    <label >Jornalismo</label>
+                </div>
+    
+                <div>
+                    <input type="checkbox" name="Categorias" value="Esportes">
+                    <label >Esportes</label>
+                </div>
+    
+                <div>
+                    <input type="checkbox" name="Categorias" value="Musica">
+                    <label >Música</label>
+                </div>
+
+                <div>
+                  <input type="checkbox" name="Categorias" value="Humor">
+                  <label >Humor</label>
+              </div>
+
+              <div>
+                <input type="checkbox" name="Categorias" value="Variedades">
+                <label >Variedades</label>
+            </div>
+
+            <div>
+              <input type="checkbox" name="Categorias" value="Podcast">
+              <label >Podcast</label>
+          </div>
+    
+            </div>
+        </div> 
+
+        <section class="categorias">
+            <h2 class="categorias__titulo">Categorias</h2>
+            <p class="categorias__subtitulo">Selecione um ou mais temas para combiná-los e descobrir conteúdos relacionados:</p>
+            <div class="button-container">  
+              <button type="button" class="category-button" id="Novelas">Novelas</button>
+              <button type="button" class="category-button" id="Series">Séries</button>
+              <button type="button" class="category-button" id="Reality Show">Reality Show</button>
+              <button type="button" class="category-button" id="Filmes">Filmes</button>
+              <button type="button" class="category-button" id="Documentarios">Documentários</button>
+              <button type="button" class="category-button" id="Jornalismo">Jornalismo</button>
+              <button type="button" class="category-button" id="Esportes">Esportes</button>
+              <button type="button" class="category-button" id="Musica">Música</button>
+              <button type="button" class="category-button" id="Humor">Humor</button>
+              <button type="button" class="category-button" id="Variedades">Variedades</button>
+              <button type="button" class="category-button" id="Podcast">Podcast</button>
+            </div>
+          </section>
+
+        <br>
+        <button type="submit" style="color: white; 
+                                     border: 2px solid #37B7FF;
+                                     border-color: #37B7FF;
+                                     background-color: #37B7FF;
+                                     border-radius: 12px;
+                                     padding: 8px; 
+                                     padding-right: 20px; 
+                                     padding-left: 20px;
+                                     text-align: center;">Recomendar</button>
+
+    </form>
+
+    </section>
+
+</div>
+
+<script>
+    // seleciona todos os botões de categoria
+var categoryButtons = document.querySelectorAll('.category-button');
+var selects = document.getElementsByName('Categorias');
+
+console.log(selects.length);
+
+// registra as categorias selecionadas
+var categoriasSelecionadas = [];
+
+function marcaSelect(valor, checked) {
+      for (var i = 0; i < selects.length; i++){
+      	if (selects[i].value == valor){
+        	selects[i].checked = checked;
+          continue;
+        }
+      }
+}
+
+// adiciona um evento de clique para cada botão de categoria
+categoryButtons.forEach(function(button) {
+  button.addEventListener('click', function() {
+    // verifica se a categoria já foi selecionada
+    var index = categoriasSelecionadas.indexOf(button.id);
+    if (index !== -1) {
+      // remove a categoria das selecionadas
+      categoriasSelecionadas.splice(index, 1);
+      // remove a classe 'selected' do botão
+      button.classList.remove('selected');
+
+      marcaSelect(button.id, false);
+      console.log('Categoria desselecionada:', button.id);
+    } else {
+      // adiciona a categoria às selecionadas
+      categoriasSelecionadas.push(button.id);
+      // adiciona a classe 'selected' ao botão
+      button.classList.add('selected');
+
+      marcaSelect(button.id, true);
+
+			console.log('Categoria selecionada:', button.id);
+    }
+  });
+});
+
+</script>
+
+{% endblock %}

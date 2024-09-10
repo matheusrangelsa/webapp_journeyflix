@@ -3,7 +3,11 @@
 
   <head>
     <meta charset="UTF-8" />
-    <title>Entrelinhas</title>
+    <link rel="icon" href="static/icon.png" type="image/x-icon">
+
+
+
+    <title>Journeyflix</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta data-react-helmet="true" name="mobile-web-app-capable" content="yes" />
     <meta data-react-helmet="true" name="format-detection" content="telephone=no" />
@@ -15,8 +19,9 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+    <!-- meus arquivos de css -->
     <link rel="stylesheet" href="{{url_for('static', filename='poster_image.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='botao_categorias.css')}}">
 
   </head>
   <body>
@@ -26,48 +31,58 @@
                 <div class="application-controller__layout">
                     <div class="header__placeholder"></div>
                     <header class="header">
-                        <div class="header__menu-icon">
-                        <!-- DEIXANDO AQUI SÓ PQ QUANDO TIRO A LOGO FICA FORA DE MARGEM -->  
-                        </div>
-                        <a class="header__logo"
-                            aria-label="Página inicial Globoplay" href="/">
-                            <img src="{{url_for('static', filename='logo_entrelinhas.svg')}}" alt="" width="200" 
-                            fill="none" viewBox="0 0 588 128">
-                            
-                        </a>
+                        <div class="logomarca">
+                            <a class="header__logo"
+                                aria-label="Página inicial Globoplay" href="/">
+                                <img src="{{url_for('static', filename='logo_journey-flix.svg')}}" alt="" width="168" 
+                                fill="none" viewBox="0 0 588 128">                            
+                            </a>
                         <!-- inserindo nova logo -->
-                        
+                        </div>
+                        <!-- centralizador da logo -->
+                        <style>
+                            .header{
+                                /* o principal responsavel por centralizar */
+                                display: flex;
+                                /* secundários na config de centralização */
+                                justify-content: center;
+                                align-items: center;
+                                padding: 0 16px;
+                                width: 100%;
+                                height: 78px;
+                                top: 0;
+                                position: fixed;
+                                
+                            }
+                            .footer-widget{
+                                position: fixed;
+                                left: 0;
+                                bottom: 0;
+                                width: 100%;
+                                text-align: center;
+                                padding: 12px;
+                            }
 
-
-                        <nav aria-label="Menu principal" class="header__primary-menu"></nav>
+                            body {
+                                padding-bottom: 80px;
+                
+                            }
+                    
+                        </style>
                      
                     </header>
                     
-                    <div style="color: white;">
+                    <div style="color: white; 
+                                margin-left:20px;
+                                font-family: 'Source Sans Pro', sans-serif;">
+                                
+                       
                     {% block conteudo %} 
 
                     {% endblock %}
                     </div>
 
-                    <!-- Informaçoões do final da página [inicio] -->
-                    <footer class="footer-widget">
-                        <!-- exibe quando o formato for para mobile {começo} -->
-                        <div class="footer-widget--short grid">
-                            <p class="footer-widget__text">©
-                                <!-- -->2023
-                                <!-- --> Globo Comunicação e Participações S.A.
-                            </p>
-                            <p class="footer-widget__text">Todos os direitos reservados - </p>
-                        </div> <!-- exibe quando o formato for para mobile {fim} -->
-
-                        <!-- exibe quando o formato for para website {começo} -->
-                        <div class="footer-widget--long grid">Globo.com © 2000-
-                            <!-- -->2023
-                            <!-- --> Globo Comunicação e Participações S.A. - Todos os direitos reservados 
-                        </div>
-                        <!-- exibe quando o formato for para website {fim} -->
-                    </footer>
-                    <!-- Informaçoões do final da página [inicio] -->
+                    
 
                 </div>
                 <div style="position:fixed;z-index:9999;top:16px;left:16px;right:16px;bottom:16px;pointer-events:none">
@@ -75,6 +90,25 @@
             </div>
         </div>
     </div>
+    <!-- Informaçoões do final da página [inicio] -->
+                    <footer class="footer-widget">
+                        <!-- exibe quando o formato for para mobile {começo} -->
+                        <div class="footer-widget--short grid">
+                            <p class="footer-widget__text">©
+                                <!-- -->2024
+                                <!-- --> Journey Flix Entretenimento S.A.
+                            </p>
+                            <p class="footer-widget__text">- Todos os direitos reservados</p>
+                        </div> <!-- exibe quando o formato for para mobile {fim} -->
+
+                        <!-- exibe quando o formato for para website {começo} -->
+                        <div class="footer-widget--long grid">Journey Flix.com © 2000-2024
+                            <!-- -->
+                            <!-- -->Journey Flix Entretenimento S.A. - Todos os direitos reservados 
+                        </div>
+                        <!-- exibe quando o formato for para website {fim} -->
+                    </footer>
+                    <!-- Informaçoões do final da página [inicio] -->
 
    
       

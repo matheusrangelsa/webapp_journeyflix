@@ -1,31 +1,32 @@
 from flask import Flask, render_template, request
 import csv
-from filtro_filmes import pre_lista_filmes, lista_filmes
+from filtragem_colaborativa import pre_lista_filmes, lista_filmes, recomendacao
 
 app = Flask(__name__)
-# route -> hashtagtreinamentos.com/
+# route -> nomedosite.com/
 # função -> o que você quer exibir naquela página
 # template
 
 @app.route("/")
-@app.route("/entrelinhas")
-def entrelinhas():
-    return render_template('entrelinhas.html')
+@app.route("/journeyflix")
+def journeyflix():
+    return render_template('journeyflix.html')
 
-# Sem importar desse jeito, não funciona e também desisti por enquanto de entender o porque
+# Função para ler o arquivo CSV
 def read_csv(file_name):
     with open(file_name, encoding='utf-8') as file:
         return list(csv.DictReader(file))
 
 @app.route('/resultado', methods=['POST'])
 def resultado():
-    trajeto = int(request.form['trajeto'])
+    trajeto = float(request.form['trajeto'])
     categorias_preferidas = request.form.getlist('Categorias')
     print(categorias_preferidas)
-    data_set = read_csv('filmes_projeto - filmes_projeto.csv')
+    data_set = read_csv('base_de_dados_conteudos.csv')
     filtro = pre_lista_filmes(data_set, categorias_preferidas, trajeto)
     pre_lista = [filtro]
-    resultado = lista_filmes(pre_lista, trajeto)
+    resultado = recomendacao(pre_lista, trajeto)
+
     print(resultado)
 
     # Aqui você pode inserir seu código de filtro para gerar a lista de resultados

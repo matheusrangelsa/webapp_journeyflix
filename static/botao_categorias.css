@@ -1,0 +1,59 @@
+body{
+    background-color: #1F1F1F;
+    margin-left:20px;
+  }
+  
+  .categorias__titulo{
+      height: 24px;
+      font-size: 18px;
+      margin: 0px;
+      margin-bottom: 8px;
+      margin-top: 32px;
+      font-weight: 700;
+      color: #FFFFFF;
+      font-family: "Open Sans", sans-serif;
+  }
+  .categorias__subtitulo{
+      height: 22px;
+      font-size: 16px;
+      font-family: "Open Sans", sans-serif;
+      color: #888888;
+      font-weight: 400;
+      margin: 0px;
+      margin-bottom: 32px;
+      margin-top: 16px;
+  }
+  
+  .button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: start; /* alinha os itens de um container flex ao longo do eixo principal (start).*/
+    margin-top: 36px;
+    flex-flow: row wrap;
+  }
+  
+  .category-button {
+    background-color: #FFFFFF26; /* cor de fundo */
+    border: none; /* sem borda */
+    border-radius: 8px; /* curvatura da borda */ 
+    color: #fff; /* cor do texto */
+    padding: 10px 20px; /* espaçamento interno */
+    text-align: center; /* alinhamento do texto */
+    text-decoration: none; /* sem decoração de texto */
+    display: inline-block;
+    font-size: 16px; /* tamanho da fonte */
+    font-family: "Open Sans", sans-serif;
+    margin: 0 8px 8px 0; /* espaçamento externo */
+    cursor: pointer; /* cursor ao passar o mouse */
+    
+  }
+  
+  .category-button:hover { 
+    background: #aaa; /* cor de fundo ao passar o mouse */
+    color: #262626;
+  }
+  
+  .category-button.selected {
+    background-color: white; /* cor de fundo quando selecionado */
+    color: #1F1F1F;
+  }
