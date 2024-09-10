@@ -20,6 +20,8 @@ O código está sendo melhorado ainda, mas por enquanto se seguir as instruçõe
    4.  **Atualize as sugestões:** Se quiser ver novas recomendações, basta apertar F5 para atualizar a página. O sistema irá sugerir outras opções disponíveis, caso existam.
 
 ---
+### **Observação:**
+É recomendado acessar o webapp da Journeyflix pelo celular, pois a formatação funciona melhor. Para desktop fica estranha a visualização e não ainda não consegui corrigir isso.
 ---
 
 ### **Etapas do algoritmo:**

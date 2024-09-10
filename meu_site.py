@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 import csv
-from filtragem_colaborativa import pre_lista_filmes, lista_filmes, recomendacao
+from filtragem_colaborativa import pre_lista_filmes, recomendacao
 
 app = Flask(__name__)
 # route -> nomedosite.com/
