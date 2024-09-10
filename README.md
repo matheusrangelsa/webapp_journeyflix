@@ -21,7 +21,7 @@ O código está sendo melhorado ainda, mas por enquanto se seguir as instruçõe
 
 ---
 ### **Observação:**
-É recomendado acessar o webapp da Journeyflix pelo celular, pois a formatação funciona melhor. Para desktop fica estranha a visualização e não ainda não consegui corrigir isso.
+### É recomendado acessar o webapp da Journeyflix pelo celular, pois a formatação funciona melhor. Para desktop fica estranha a visualização e não ainda não consegui corrigir isso.
 ---
 
 ### **Etapas do algoritmo:**
